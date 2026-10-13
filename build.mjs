@@ -109,7 +109,7 @@ const printBody = `${header('print')}<main id="main" class="whole-guide" tabinde
 await writeFile(path.join(dist, 'print.html'), document('The complete guide', 'All chapters of the everyday AI field guide in one readable, printable edition.', printBody, 'print'));
 const instructions = chapters.find(c => c.slug === 'instructions').source.match(/```text\n([\s\S]*?)\n```/)[1] + '\n';
 for (const name of ['codex-instructions', 'claude-instructions']) await writeFile(path.join(dist, 'downloads', `${name}.txt`), instructions);
-const setupPrompt = [...chapters.find(c => c.slug === 'instructions').source.matchAll(/```text\n([\s\S]*?)\n```/g)][1][1] + '\n';
+const setupPrompt = await readFile(path.join(root, 'SETUP.md'), 'utf8');
 await writeFile(path.join(dist, 'downloads', 'setup-prompt.txt'), setupPrompt);
 for (const asset of ['styles.css', 'guide.js', 'favicon.svg']) await copyFile(path.join(root, 'assets', asset), path.join(dist, 'assets', asset));
 console.log(`Built ${chapters.length + 1} HTML pages, 3 assets, and 3 plain-text downloads.`);

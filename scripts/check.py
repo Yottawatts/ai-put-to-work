@@ -75,7 +75,7 @@ for file, output in [('PROMPTS.md','prompts.html'),('INSTRUCTIONS.md','instructi
 instructions = re.search(r'```text\n([\s\S]*?)\n```', (ROOT/'content/INSTRUCTIONS.md').read_text())[1] + '\n'
 for name in ['codex-instructions.txt', 'claude-instructions.txt']:
     assert (DIST/'downloads'/name).read_text() == instructions, f'Template mismatch: {name}'
-setup_prompt = re.findall(r'```text\n([\s\S]*?)\n```', (ROOT/'content/INSTRUCTIONS.md').read_text())[1] + '\n'
+setup_prompt = (ROOT/'SETUP.md').read_text()
 assert (DIST/'downloads/setup-prompt.txt').read_text() == setup_prompt, 'Setup prompt download mismatch'
 assert len(pages['print.html'].articles) == 12, 'Print edition missing chapters'
 source_blocks = [block for source in (ROOT/'content').glob('*.md')

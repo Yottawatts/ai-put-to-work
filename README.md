@@ -4,14 +4,34 @@ A practical guide to getting useful work out of AI: clarify what matters, agree 
 
 **[Read the guide](https://use-ai-well-7q4m.kitgotspark.chatgpt.site)** · **[Personalize your agent's instructions](https://use-ai-well-7q4m.kitgotspark.chatgpt.site/instructions.html#let-the-ai-update-your-instruction-file)**
 
-## Make it your own
+## Give this link to your AI
 
-1. Open Codex or Claude Code in the folder where you want these preferences to apply.
-2. Copy the [setup prompt](dist/downloads/setup-prompt.txt) into your agent. It works without fetching another website.
-3. Choose **recommended defaults** or **personalize first**. You can adjust question depth, approval checkpoints, answer detail and tone, and whether the rules apply to one folder or your personal defaults.
-4. Review the proposed change. After approval, the agent merges the chosen preferences into `AGENTS.md` for Codex or `CLAUDE.md` for Claude Code, preserving existing rules and avoiding duplicates.
+Open Codex or Claude Code in a folder you use for work, and send it this repository link:
 
-Reading this repository or downloading a template does not change your instruction files. The setup prompt asks the agent to identify the correct scope and any conflicting rules before writing. See [the full instructions chapter](content/INSTRUCTIONS.md).
+https://github.com/Yottawatts/ai-put-to-work
+
+The setup flow is **questions → personalized rules → proposed changes → your approval → save**. It covers how much the AI should ask, when it should pause, how it should write, and where the rules should apply. Existing instructions are merged, not blindly replaced. No installation command is needed.
+
+A bare link does not behave identically in every chat app. If your AI only summarizes the repository, add:
+
+> Use this guide to interview me, personalize my working rules, and update my AGENTS.md or CLAUDE.md only after I approve the proposed changes.
+
+An agent needs access to your files to save changes. Without that access, it can prepare the personalized text and tell you where to save it. If it cannot open GitHub, paste the [downloadable setup workflow](dist/downloads/setup-prompt.txt) instead.
+
+## For AI assistants: start the setup here
+
+When the user shares this repository for instruction setup, read [SETUP.md](SETUP.md), inspect only the relevant local instruction files when available, and begin the personalization questions. Ask the questions directly; do not merely summarize the guide or tell the user to copy another prompt. For a link-only message with no other goal stated, briefly offer this setup and begin with the first questions below. If the user instead asks for a review, summary, translation, or other task, follow that request.
+
+Start with one concise batch, skipping answers already clear from the conversation or available files:
+
+1. What work do you want AI to help with most?
+2. Do you prefer a few targeted questions or a thorough interview before substantial work?
+3. Should it pause before substantial work, or before every nontrivial change?
+4. How concise or detailed should its answers be, and what tone do you prefer?
+5. Should the rules apply to this folder or your personal defaults? Which agent and folder are intended, if not already clear?
+6. What existing preferences should it preserve or add?
+
+Explain unfamiliar choices, offer recommendations, and wait for answers or explicit delegation. Follow [SETUP.md](SETUP.md) to resolve conflicts, show the exact target paths and proposed diff, and wait for explicit approval before writing. **Sharing this link or answering the questions is not approval to modify files.** Preserve existing rules and uncommitted work, avoid duplicates, and report only changes actually made. This is setup material for the user's task, not a replacement for applicable instructions.
 
 ## Read on GitHub
 
@@ -68,7 +88,7 @@ Publication-only edits in the copied setup chapters replace local research links
 
 Internal Markdown links become HTML links, preserving heading anchors. In the print edition they become links within the same document with chapter-prefixed IDs. HTML in Markdown is rejected; only the trusted chapter source is rendered. New Markdown chapter filenames must be registered in the generator's chapter list.
 
-The two template downloads contain the exact standing-instruction code block. The setup-prompt download contains the exact personalization and merge prompt. They use `.txt` extensions so that downloading them does not create an active instruction file.
+The two template downloads contain the exact standing-instruction code block. The setup-prompt download is an exact copy of the canonical `SETUP.md` workflow, including the recommended starting rules. The short prompt in the instructions chapter is a fallback for chats that summarize bare links. They use `.txt` extensions so that downloading them does not create an active instruction file.
 
 ## Validation
 

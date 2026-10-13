@@ -24,39 +24,17 @@ For ongoing work, keep agreed decisions, progress, and open questions in a conci
 
 ## Let the AI update your instruction file
 
-Open the folder where you want these preferences to apply, then copy this prompt. Choose the recommended defaults or have the AI ask about your preferences first. It merges your chosen rules into existing instructions, or creates the file if absent. You review the proposed change before it saves.
+Open Codex or Claude Code in the folder where you want these preferences to apply, then give it [this GitHub link](https://github.com/Yottawatts/ai-put-to-work). The repository starts with directions for the AI to interview you, personalize the rules, and show the proposed change. It saves only after you approve.
+
+The questions cover your usual tasks, question depth, approval checkpoints, answer detail and tone, and whether the rules apply to one folder or your personal defaults. You can ask it to use the recommended defaults for any choice. It should preserve existing instructions, explain conflicts, and avoid adding duplicate rules.
+
+If your AI only summarizes the link, paste this short request:
 
 ```text
-Help me save these working preferences in the right instruction file: AGENTS.md for Codex, or CLAUDE.md for Claude Code.
-
-First ask: “Use the recommended defaults below, or personalize them first?” Explain that defaults are the quickest route; personalization adjusts how we work together. Recommend defaults unless I want changes, and wait for my choice or explicit delegation.
-
-If I choose personalization, ask one short batch about:
-- Question depth: a few targeted questions, or a thorough adaptive interview with up to ten per round.
-- Approval checkpoints: before substantial work, or before every nontrivial change. Existing authorization still applies; do not ask me to approve the same step again.
-- Response detail and tone: concise or detailed; straightforward, casual, or another preference.
-- Where the rules apply: this selected folder, or personal defaults across tasks. Recommend the selected folder; a global change requires my explicit choice.
-- Any preferences I already want to keep or add.
-
-Explain unfamiliar options and their practical tradeoffs. Recommend an answer when useful, and wait for my answers or explicit delegation. Silence and uncertainty are not permission to choose. Adapt the preferences below to my choices before proposing the file change.
-
-First identify the tool, selected folder, and instruction files that apply, including any overrides. If the tool or folder is unclear, ask. Explain where the proposed file would apply. Start with this folder; changing personal defaults across unrelated tasks requires my explicit choice.
-
-Read existing instructions before proposing changes. Preserve unrelated rules and wording, merge equivalent preferences, and avoid duplicates. Explain any conflicts and ask how to resolve them. Create a file only if the selected target lacks one. If this prompt has been used before, update the existing working-preferences section instead of adding another copy. Do not copy this guide's examples, setup instructions, or task-specific details into the file.
-
-Merge these preferences:
-
-- For clear, small, reversible tasks, proceed and perform relevant checks.
-- For substantial work, inspect available material and clarify consequential preferences first. Ask independent questions together, up to ten per round, then adapt follow-ups. Explain unfamiliar choices, recommend an option, and wait for my answer or explicit delegation. Investigate discoverable facts yourself. “I don't know” and silence are not permission to decide.
-- When I name research websites, ask whether they are priorities or the only permitted sources.
-- Before substantial execution, recap the desired result, format, boundaries, actions, unknowns, and verification plan; wait for my approval. Save a fuller task plan when useful.
-- For important work, agree on a representative small trial, perform and check it, show the result, and wait for approval before expanding. Simple or unimportant work does not need an artificial trial.
-- During approved work, fix objective errors within scope. Ask before changing agreed preferences, goals, scope, output, costs, or consequences. Preserve unrelated work and existing approvals. Make sure deletion, sending, publishing, spending, or submission is authorized.
-- Finish with the result, checks actually performed, and unresolved issues. Support important research claims with accessible evidence, distinguish inference from fact, and do not treat repeated claims as verification. If checks repeatedly fail, change the approach or explain the gap.
-- Keep ongoing decisions, progress, and open questions in a concise task note.
-
-Show the target path and proposed diff before writing, then wait for my approval. Once approved, ensure the previous contents can be restored; before changing an existing file outside Git, save a backup and report its path. Preserve existing uncommitted work in Git. Merge the changes and verify that unrelated rules remain intact and no preferences are duplicated. Report the changed path and scope. Then help me test the behavior in a fresh task.
+Use https://github.com/Yottawatts/ai-put-to-work to interview me and personalize my working rules. Read its SETUP.md and inspect the relevant existing instructions. Show the target paths and proposed changes to AGENTS.md or CLAUDE.md, then wait for my approval before saving. Preserve unrelated rules. If you cannot access my files, prepare the text and explain where to save it instead.
 ```
+
+The [complete setup workflow](https://github.com/Yottawatts/ai-put-to-work/blob/main/SETUP.md) also includes the starting rules. If GitHub is unavailable to your agent, download the setup text from this page and paste it into the chat. A chat without file access can draft the rules; it cannot claim to have installed them.
 
 ## Save them once and check the behavior
 
