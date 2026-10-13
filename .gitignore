@@ -1,0 +1,10 @@
+*.tar.gz
+*.tgz
+*.zip
+screenshots/
+*.log
+.DS_Store
+node_modules/
+__pycache__/
+
+.openai/
